@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title >Story Forge Express Workbook</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  </head>
+  <body>
+    <!-- Loader -->
+    <div id="loader" class="loader">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <div id="landing_pg">
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="nav_logo"> <span><b>S</b></span>tory Forge</a>
+
+        <ul class="nav_items">
+          <li class="nav_item">
+            <a href="#" class="nav_link">Home</a>
+            <a href="#" class="nav_link">Our team</a>
+            <a href="#" class="nav_link">Services</a>
+            <a href="#" class="nav_link">Contact</a>
+          </li>
+        </ul>
+
+        <button class="button" id="form-open">Login</button>
+      </nav>
+    </header>
+   
+    <!-- Home -->
+    <section class="home">
+      <div class="form_container">
+        <i class="uil uil-times form_close"></i>
+        
+        <!-- Login From -->
+        <div class="form login_form">
+          <form action="#">
+            <h2>Login</h2>
+
+            <div class="input_box">
+              <input type="email" placeholder="Enter your email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+              <input type="password" placeholder="Enter your password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+            </div>
+
+            <div class="option_field">
+              <span class="checkbox">
+                <input type="checkbox" id="check" />
+                <label for="check">Remember me</label>
+              </span>
+              <a href="#" class="forgot_pw">Forgot password?</a>
+            </div>
+
+            <button class="button">Login Now</button>
+
+            <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+          </form>
+        </div>
+        
+
+        <!-- Signup From -->
+        <div class="form signup_form">
+          <form action="#">
+            <h2>Signup</h2>
+
+            <div class="input_box">
+              <input type="email" placeholder="Enter your email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+              <input type="password" placeholder="Create password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+            </div>
+            <div class="input_box">
+              <input type="password" placeholder="Confirm password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+            </div>
+
+            <button class="button">Signup Now</button>
+
+            <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+          </form>
+        </div>
+      </div>
+      <!-- body content -->
+      <div class="content">
+        <h1>Story Forge Express Workbook</h1>
+        <h3>Your Path to Mastering Effective Communication</h3>
+        <div class="right"></div>
+        <h4>Worried about your future?</h4>
+        
+        <button id="solution" onclick="startWorkbook()"><a>Get solution <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a> </button>
+        
+      </div>
+    </div>
+      
+    </section>
+  </div>
+
+
+  <!-- sections -->
+   <!-- Workbook Sections -->
+  <div id="workbook" style="display:none;">
+    <div id="section1" class="section">
+      <h2>Section 1: What Does Your Client Want?</h2>
+      <textarea id="client-goal" placeholder="Describe your client's main goal or desire" required></textarea>
+      
+      <!-- Back button added to Section 1 -->
+      <button onclick="goHomePage()" id="backBtn1">Back to Home</button>
+      <button onclick="nextSection(2)" id="nextBtn1">Next</button>
+    </div>
+
+    <div id="section2" class="section" style="display:none;">
+      <h2>Section 2: What's Your Client's Problem?</h2>
+      <textarea id="client-problem" placeholder="Describe your client's problem"></textarea>
+      <button onclick="prevSection(1)" id="backBtn2">Back</button>
+      <button onclick="nextSection(3)" id="nextBtn2">Next</button>
+    </div>
+
+    <div id="section3" class="section" style="display:none;">
+      <h2>Section 3: Enter the Mentor</h2>
+      <textarea id="mentor-understanding" placeholder="Describe your understanding of the client's issue"></textarea>
+      <button onclick="prevSection(2)" id="backBtn3">Back</button>
+      <button onclick="nextSection(4)" id="nextBtn3">Next</button>
+    </div>
+
+    <div id="section4" class="section" style="display:none;">
+      <h2>Section 4: The Call-to-Action</h2>
+      <textarea id="cta" placeholder="What is the call-to-action you want your client to take?"></textarea>
+      <button onclick="prevSection(3)" id="backBtn4">Back</button>
+      <button onclick="submitForm()" id="nextBtn4">Submit</button>
+    </div>
+
+    <!-- Completion Message -->
+    <div id="completionMessage" style="display:none;">
+      <h2>Thank you for completing the workbook!</h2>
+      <p>Your responses have been successfully submitted.</p>
+      <button onclick="goHomePage()" id="homeBtn">Home page</button>
+      <button id="watsappBtn"><a href="https://wa.me/+91-6303445418" target="_blank">chat with us</a>  </button>
+      <button id="EmailBtn"> <a href="mailto:govindvattikolla@example.com" target="_blank">Send email</a></button>
+    </div>
+  </div>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
