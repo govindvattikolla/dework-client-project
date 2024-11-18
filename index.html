@@ -7,15 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title >Story Forge Express Workbook</title>
     <link rel="stylesheet" href="style.css" />
+   <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+   <!-- icons for teams -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+    <!-- Fonts Links For Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+   
     <!-- Unicons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
   </head>
   <body>
     <!-- Loader -->
     <div id="loader" class="loader">
       <div class="loader-spinner"></div>
     </div>
-
+   <a href="testimonials.html"></a>
     <!-- Header -->
     <div id="landing_pg">
     <header class="header">
@@ -24,10 +43,10 @@
 
         <ul class="nav_items">
           <li class="nav_item">
-            <a href="#" class="nav_link">Home</a>
-            <a href="#" class="nav_link">Our team</a>
-            <a href="#" class="nav_link">Services</a>
-            <a href="#" class="nav_link">Contact</a>
+            <a href="#home" class="nav_link">Home</a>
+            <a href="#teams" class="nav_link" id="" onclick="ourTeam()">Our team</a>
+            <a href="#services" class="nav_link">Services</a>
+            <a href="#footer" class="nav_link">Contact</a>
           </li>
         </ul>
 
@@ -36,7 +55,7 @@
     </header>
    
     <!-- Home -->
-    <section class="home">
+    <section class="home" id="home">
       <div class="form_container">
         <i class="uil uil-times form_close"></i>
         
@@ -97,9 +116,9 @@
         </div>
       </div>
       <!-- body content -->
-      <div class="content">
+      <div class="content_text">
         <h1>Story Forge Express Workbook</h1>
-        <h3>Your Path to Mastering Effective Communication</h3>
+        <h3>"Your Path to Mastering Effective Communication"</h3>
         <div class="right"></div>
         <h4>Worried about your future?</h4>
         
@@ -112,12 +131,15 @@
   </div>
 
 
+
   <!-- sections -->
    <!-- Workbook Sections -->
   <div id="workbook" style="display:none;">
     <div id="section1" class="section">
-      <h2>Section 1: What Does Your Client Want?</h2>
-      <textarea id="client-goal" placeholder="Describe your client's main goal or desire" required></textarea>
+      <h2>Section 1: What is your main reason for learning English?</h2>
+      
+      <textarea id="client-goal" placeholder="Describe your reasion here..." required ></textarea>
+    
       
       <!-- Back button added to Section 1 -->
       <button onclick="goHomePage()" id="backBtn1">Back to Home</button>
@@ -125,22 +147,22 @@
     </div>
 
     <div id="section2" class="section" style="display:none;">
-      <h2>Section 2: What's Your Client's Problem?</h2>
-      <textarea id="client-problem" placeholder="Describe your client's problem"></textarea>
+      <h2>Section 2: In which area did you get stuck?</h2>
+      <textarea id="client-problem" placeholder="write your problem here..."></textarea>
       <button onclick="prevSection(1)" id="backBtn2">Back</button>
       <button onclick="nextSection(3)" id="nextBtn2">Next</button>
     </div>
 
     <div id="section3" class="section" style="display:none;">
-      <h2>Section 3: Enter the Mentor</h2>
-      <textarea id="mentor-understanding" placeholder="Describe your understanding of the client's issue"></textarea>
+      <h2>Section 3: What specific skills or areas would you like to improve?</h2>
+      <textarea id="mentor-understanding" placeholder="mention the areas where you wanted to improve your self"></textarea>
       <button onclick="prevSection(2)" id="backBtn3">Back</button>
       <button onclick="nextSection(4)" id="nextBtn3">Next</button>
     </div>
 
     <div id="section4" class="section" style="display:none;">
-      <h2>Section 4: The Call-to-Action</h2>
-      <textarea id="cta" placeholder="What is the call-to-action you want your client to take?"></textarea>
+      <h2>Section 4: Do you have any specific learning goals or deadlines?</h2>
+      <textarea id="cta" placeholder="describe your goals here...."></textarea>
       <button onclick="prevSection(3)" id="backBtn4">Back</button>
       <button onclick="submitForm()" id="nextBtn4">Submit</button>
     </div>
@@ -154,8 +176,197 @@
       <button id="EmailBtn"> <a href="mailto:govindvattikolla@example.com" target="_blank">Send email</a></button>
     </div>
   </div>
-    
 
+  <!-- our team -->
+  <div class="teams" id="teams">
+    <h1 class="experts" >Our Experts</h1>
+    <section class="container2">
+      <div class="category_container">
+        <div class="content2">
+          <img
+            src="team1.jpg"
+            class="professio_image" alt="Profession" />
+          <img
+            src="team1.jpg"
+            class="profile_image" alt="Profile" />
+          <div class="profile_detail">
+            <span>Mr.syam</span>
+            <p>Senior English Communication Specialist</p>
+          </div>
+  
+          <div class="wrapper">
+            <div class="profile_quote">
+              <p>" 8+ years in professional communication, training, and content creation."</p>
+            </div>
+          </div>
+  
+        </div>
+        <div class="content2">
+          <img
+            src="team2.jpg"
+            class="profession_image" alt="Profession" />
+          <img
+            src="team2.jpg"
+            class="profile_image" alt="Profile" />
+          <div class="profile_detail">
+            <span>Mr. Thompson</span>
+            <p>English Communication and Writing Expert</p>
+          </div>
+          <div class="wrapper">
+            <div class="profile_quote">
+              <p>" 6+ years in corporate communication, content development, and writing.
+                "</p>
+            </div>
+          </div>
+        </div>
+        <div class="content2">
+          <img
+            src="team3.jpg"
+            class="profession_image" alt="Profession" />
+          <img
+            src="team3.jpg"
+            class="profile_image" alt="Profile" />
+          <div class="profile_detail">
+            <span>Ms.Leena</span>
+            <p>Corporate English Communication Consultant</p>
+          </div>
+          <div class="wrapper">
+            <div class="profile_quote">
+              <p>"10+ years in corporate communication strategy, executive coaching."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+     
+    <!-- services -->
+    <section id="services">
+      <div class="row">
+        <h2 class="section-heading">Our Services</h2>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fas fa-hammer"></i>
+            </div>
+            <h3>General English Language</h3>
+            <p>
+              This course focuses on building proficiency in the four main language skills: speaking, listening, reading, and writing.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fas fa-brush"></i>
+            </div>
+            <h3>Business English Training</h3>
+            <p>
+              Tailored for professionals, this service focuses on language skills needed in the workplace,
+               including email writing.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fas fa-wrench"></i>
+            </div>
+            <h3>English for Specific Purposes(ESP)</h3>
+            <p>
+              ESP courses are designed for individuals who need English for a specific field or profession,
+               such as medical English,etc..
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fas fa-truck-pickup"></i>
+            </div>
+            <h3>Accent Reduction and Pronunciation</h3>
+            <p>
+              This service helps non-native speakers improve their accent and pronunciation to sound more natural and clear in English.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fas fa-broom"></i>
+            </div>
+            <h3>Exam Preparation (IELTS)</h3>
+            <p>
+              These services provide targeted preparation for standardized English exams required for study abroad,
+               immigration, or professional certifications.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fas fa-plug"></i>
+            </div>
+            <h3>Cultural Immersion Programs</h3>
+            <p>
+              Many institutions offer conversational English clubs or cultural exchange programs, where students can practice their speaking skills
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+
+   <!-- footer -->
+    
+   <section class="footer" id="footer">
+    <div class="footer-row">
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul class="links">
+          <li><a href="#home">About Us</a></li>
+          <li><a href="#home">get in touch</a></li>
+          <li><a href="#teams">our experts</a></li>
+          <li><a href="#services">Service</a></li>
+          <li><a href="#footer">our location</a></li>
+        </ul>
+      </div>
+      <!-- map -->
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15222.224797962062!2d78.39559795!3d17.4809431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91bc428b7359%3A0x4d00b34fcd26fcf!2sKukatpally!5e0!3m2!1sen!2sin!4v1731873591429!5m2!1sen!2sin" 
+        width="380" height="230" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>
+          Subscribe to our newsletter for a weekly dose
+          of news, updates, helpful tips, and
+          exclusive offers.
+        </p>
+        <form action="#">
+          <input type="text" placeholder="Your email" required>
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+        <div class="icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+    
+  
+    
+    
+  <!-- js file -->
     <script src="script.js"></script>
+    
   </body>
 </html>

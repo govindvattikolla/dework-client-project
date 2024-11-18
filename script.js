@@ -1,3 +1,4 @@
+// Variables for form and landing page handling
 const formOpenBtn = document.querySelector("#form-open"),
   home = document.querySelector(".home"),
   formContainer = document.querySelector(".form_container"),
@@ -26,30 +27,29 @@ signupBtn.addEventListener("click", (e) => {
   e.preventDefault();
   formContainer.classList.add("active");
 });
+
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
   formContainer.classList.remove("active");
 });
-// animation loader
-// Hide loader after page load
+
+// Animation loader - Hide loader after page load
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   loader.classList.add('hidden');
 });
 
-
-
-// landing page
-
-// Function to start the workbook (show the workbook sections)
+// Landing Page Workbook Functions
 function startWorkbook() {
   // Hide the landing page and show the workbook
   document.getElementById('landing_pg').style.display = 'none';
+  document.getElementById("footer").style.display='none';
+  document.getElementById("teams").style.display='none';
+  document.getElementById("services").style.display='none';
   document.getElementById('workbook').style.display = 'block';
   showSection(1); // Show the first section when starting
 }
 
-// Function to show a specific section of the workbook
 function showSection(sectionNumber) {
   // Hide all sections first
   var sections = document.querySelectorAll('.section');
@@ -61,48 +61,67 @@ function showSection(sectionNumber) {
   document.getElementById('section' + sectionNumber).style.display = 'block';
 }
 
-// Function to go to a specific section
 function nextSection(sectionNumber) {
+
+  
+  const clientGoal = document.getElementById('client-goal').value;
+  // const clientProblem = document.getElementById('client-problem').value;
+  if(clientGoal===""){
+    alert("please fill out the form")
+    return;
+  }
+  
+  else{
   showSection(sectionNumber);
+  }
 }
 
-// Function to go back to a previous section
+
+
 function prevSection(sectionNumber) {
   showSection(sectionNumber);
 }
 
-// Function to go back to the home page
 function goHomePage() {
   // Hide the workbook and show the landing page
   document.getElementById('workbook').style.display = 'none';
   document.getElementById('landing_pg').style.display = 'block';
+  document.getElementById("services").style.display='block';
+  document.getElementById("footer").style.display='block';
+  document.getElementById("teams").style.display='block';
+
 }
 
-// Function to handle the form submission
 function submitForm() {
   // Get values from all the sections (textarea fields)
-  const clientGoal = document.getElementById('client-goal').value;
+  // const clientGoal = document.getElementById('client-goal').value;
   const clientProblem = document.getElementById('client-problem').value;
   const mentorUnderstanding = document.getElementById('mentor-understanding').value;
   const cta = document.getElementById('cta').value;
 
   // Check if all fields have been filled out (basic validation)
-  if (!clientGoal || !clientProblem || !mentorUnderstanding || !cta) {
+
+  if (  !mentorUnderstanding || !cta) {
     alert('Please fill out all sections before submitting.');
     return; // Prevent submission if fields are empty
   }
-  alert('form submission successful')
+  alert('Form submission successful');
   // Optional: You can save the form data here (e.g., send it to a server)
   // For now, just log it to the console
-  console.log('Client Goal:', clientGoal);
+  // console.log('Client Goal:', clientGoal);
   console.log('Client Problem:', clientProblem);
   console.log('Mentor Understanding:', mentorUnderstanding);
   console.log('CTA:', cta);
 
   // Hide the workbook and show the completion message
-  document.getElementById("section4").style.display="none"
+  document.getElementById("section4").style.display = "none";
   document.getElementById('workbook').style.display = 'block';
   document.getElementById('completionMessage').style.display = 'block';
 }
+
+
+
+
+
 
 
